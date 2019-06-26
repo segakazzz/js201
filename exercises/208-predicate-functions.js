@@ -21,6 +21,17 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+function isVowel(value){
+    if (typeof value === 'number'){
+        return false
+    } 
+    let arr = ['a', 'i', 'u', 'e', 'o']
+    return arr.indexOf(value.toLowerCase()) > 0
+}
+console.log(isVowel('c'))
+console.log(isVowel('e'))
+console.log(isVowel('A'))
+console.log(isVowel(99))
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +48,26 @@
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+function isEven(number){
+    if (typeof number !== 'number'){
+        return false
+    }
+    return number % 2 === 0
+}
 
+function isOdd(number){
+    if (typeof number !== 'number'){
+        return false
+    }
+    return number % 2 === 1
+}
+isEven(100)
+isEven(1)
+isEven(-2)
+isEven('banana')
+isOdd(5)
+isOdd('7')
+isOdd(3.14)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name

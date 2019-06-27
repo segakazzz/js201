@@ -82,3 +82,12 @@ isOdd(3.14)
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+function isCapitalCity(state, city){
+
+}
+
+isCapitalCity('Texas', 'Austin') 
+isCapitalCity('Texas', 'Houston')
+isCapitalCity('Alaska', 'Juneau')
+isCapitalCity('Strawberry', 'Mango')

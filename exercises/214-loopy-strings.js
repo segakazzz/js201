@@ -102,17 +102,23 @@ console.log(capitalizeAll('every day is like sunday')) //--> 'Every Day Is Like 
 // split('xyz', 'r') --> ['xyz']
 
 function split(str, sep){
+    let index = 0
+    let previousIndex = 0
     let arr = []
-    let lastIndex = 0
-    for(let idx = 0; idx < str.length; idx++){
-        console.log('IndexRange: ' + lastIndex + ','+ idx)
-        if(str[idx] === sep){
-            arr.push(str.substring(lastIndex, idx))
-            lastIndex = idx + 1
-            console.log(arr)
+    while(index < str.length){
+        // console.log(index+ '>>>' + (sep.length + index))
+        // console.log(str.substring(index, sep.length + index))
+        if(str.substring(index, sep.length + index) == sep){
+            //console.log('matched!!' + sep)
+            arr.push(str.substring(previousIndex, index))
+            index += sep.length
+            previousIndex = index
+        } else {
+            index++
         }
     }
-    arr.push()
+
+    arr.push(str.substring(previousIndex))
     return arr
 }
 

@@ -7,6 +7,19 @@
 // gcd(3, 15) --> 3
 // gcd(50, 20) --> 10
 
+function gcd(a, b){
+    let minNumber = ( a > b) ? b : a
+    for (let i=minNumber; i > 0; i--){
+        if (a % i === 0 && b % i === 0){
+            return i
+        }
+    }
+    return 1
+}
+
+console.log(gcd(5, 1)) //--> 1
+console.log(gcd(3, 15)) //--> 3
+console.log(gcd(50, 20)) //--> 10
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,3 +32,15 @@
 // factors(12) --> [1, 2, 3, 4, 6, 12]
 // factors(42) --> [1, 2, 3, 6, 7, 14, 21, 42]
 
+function factors(number){
+    let array = []
+    for (let i = 1; i <= number; i++){
+        if (number % i === 0){
+            array.push(i)
+        }
+    }
+    return array
+}
+console.log(factors(1)) // --> [1]
+console.log(factors(12)) //--> [1, 2, 3, 4, 6, 12]
+console.log(factors(42)) //--> [1, 2, 3, 6, 7, 14, 21, 42]

@@ -30,10 +30,10 @@ function isVowel(value){
     let arr = ['a', 'i', 'u', 'e', 'o']
     return arr.indexOf(value.toLowerCase()) > 0
 }
-console.log(isVowel('c'))
-console.log(isVowel('e'))
-console.log(isVowel('A'))
-console.log(isVowel(99))
+// console.log(isVowel('c'))
+// console.log(isVowel('e'))
+// console.log(isVowel('A'))
+// console.log(isVowel(99))
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,13 +63,13 @@ function isOdd(number){
     }
     return number % 2 === 1
 }
-isEven(100)
-isEven(1)
-isEven(-2)
-isEven('banana')
-isOdd(5)
-isOdd('7')
-isOdd(3.14)
+// isEven(100)
+// isEven(1)
+// isEven(-2)
+// isEven('banana')
+// isOdd(5)
+// isOdd('7')
+// isOdd(3.14)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
@@ -78,6 +78,7 @@ isOdd(3.14)
 //
 // Hint 1: What is the best data structure to store this information? Object? Array? etc.
 // Hint 2: This problem can be solved without using a "for" or "while" loop.
+// Hint 3: Can you find this data online in JSON format? How might that be helpful?
 //
 // Examples:
 // isCapitalCity('Texas', 'Austin') --> true
@@ -393,13 +394,15 @@ function isCapitalCity(state, city){
     Object.keys(capitals).forEach(function(index){
         let obj = capitals[index]
         //console.log(obj)
-        console.log('state: '  + state + ' city: ' + city)
-        console.log('name: ' + obj.name + ' capital:' + obj.capital)
-        if (state === obj.name){
+        // console.log('state: '  + state + ' city: ' + city)
+        // console.log('name: ' + obj.name + ' capital:' + obj.capital)
+        console.log(state)
+        console.log(obj.name)
+        if (state == obj.name){
             //console.log('matched!!')
             return true
         }         
-    });
+    })
     return false
 }
 

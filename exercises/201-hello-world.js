@@ -7,6 +7,9 @@ function hello(name){
 
 hello('Mustache')
 
+// Hey Flex Class, it'd s Patrick
+// Great question
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "helloDefault" such that if no name is given it will return

@@ -12,13 +12,21 @@
 
 
 function fizzbuzz(number){
-    if(number % 3 === 0 && number % 5 === 0){
-
-    } else if (number % 3 === 0) {
-
-    } else if (number % 5 === 0){
-
-    } else {
-
+    let str = '';
+    for (let idx = 1; idx < number + 1; idx++){
+        if(idx % 3 === 0 && idx % 5 === 0){
+            str += 'fizzbuzz'
+        } else if (idx % 3 === 0) {
+            str += 'fizz'
+        } else if (idx % 5 === 0){
+            str += 'buzz'
+        } else {
+            str += '.'
+        }
+        console.log(str)   
     }
+    return str
 }
+
+console.log(fizzbuzz(3)) // --> '..fizz'
+console.log(fizzbuzz(15)) // --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'

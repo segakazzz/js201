@@ -391,22 +391,23 @@ const capitals = {
 
 function isCapitalCity(state, city){
     //console.log(capitals)
+    let status = false
     Object.keys(capitals).forEach(function(index){
         let obj = capitals[index]
-        //console.log(obj)
-        // console.log('state: '  + state + ' city: ' + city)
-        // console.log('name: ' + obj.name + ' capital:' + obj.capital)
-        console.log(state)
-        console.log(obj.name)
-        if (state == obj.name){
-            //console.log('matched!!')
-            return true
+        if (state === obj.name && city === obj.capital){
+            // console.log('matched!!')
+            status = true
         }         
     })
-    return false
+    return status
 }
 
 console.log(isCapitalCity('Texas', 'Austin'))
 console.log(isCapitalCity('Texas', 'Houston'))
 console.log(isCapitalCity('Alaska', 'Juneau'))
 console.log(isCapitalCity('Strawberry', 'Mango'))
+
+// isCapitalCity('Texas', 'Austin') --> true
+// isCapitalCity('Texas', 'Houston') --> false
+// isCapitalCity('Alaska', 'Juneau') --> true
+// isCapitalCity('Strawberry', 'Mango') --> false

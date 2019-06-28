@@ -23,12 +23,14 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
-function isVowel(value){
-    if (typeof value === 'number'){
+function isVowel(input){
+    if (typeof input !== 'string'){
         return false
-    } 
-    let arr = ['a', 'i', 'u', 'e', 'o']
-    return arr.indexOf(value.toLowerCase()) > 0
+    } else {
+      let arr = ['a', 'i', 'u', 'e', 'o']
+      //console.log(arr.indexOf(value.toLowerCase()))
+      return arr.indexOf(input.toLowerCase()) > -1  
+    }
 }
 // console.log(isVowel('c'))
 // console.log(isVowel('e'))
@@ -54,6 +56,7 @@ function isEven(number){
     if (typeof number !== 'number'){
         return false
     }
+    number = (number > 0) ? number : number * -1 
     return number % 2 === 0
 }
 
@@ -61,13 +64,14 @@ function isOdd(number){
     if (typeof number !== 'number'){
         return false
     }
+    number = (number > 0) ? number : number * -1 
     return number % 2 === 1
 }
 // isEven(100)
 // isEven(1)
 // isEven(-2)
 // isEven('banana')
-// isOdd(5)
+console.log(isOdd(-5))
 // isOdd('7')
 // isOdd(3.14)
 
@@ -402,10 +406,10 @@ function isCapitalCity(state, city){
     return status
 }
 
-console.log(isCapitalCity('Texas', 'Austin'))
-console.log(isCapitalCity('Texas', 'Houston'))
-console.log(isCapitalCity('Alaska', 'Juneau'))
-console.log(isCapitalCity('Strawberry', 'Mango'))
+// console.log(isCapitalCity('Texas', 'Austin'))
+// console.log(isCapitalCity('Texas', 'Houston'))
+// console.log(isCapitalCity('Alaska', 'Juneau'))
+// console.log(isCapitalCity('Strawberry', 'Mango'))
 
 // isCapitalCity('Texas', 'Austin') --> true
 // isCapitalCity('Texas', 'Houston') --> false

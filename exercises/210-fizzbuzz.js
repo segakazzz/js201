@@ -9,3 +9,16 @@
 // Examples:
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
+
+
+function fizzbuzz(number){
+    if(number % 3 === 0 && number % 5 === 0){
+
+    } else if (number % 3 === 0) {
+
+    } else if (number % 5 === 0){
+
+    } else {
+
+    }
+}

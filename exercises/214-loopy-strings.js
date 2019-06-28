@@ -8,7 +8,18 @@
 // Example:
 // reverse("skoob") --> "books"
 
+function reverse(str){
+    let arr = []
+    if (typeof str !== 'string'){
+        return false
+    }
+    for(let idx = 0; idx < str.length; idx++){
+        arr.push(str[str.length - idx - 1]);
+    }
+    return arr.join('')
 
+}
+console.log(reverse("skoob")) // books
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
@@ -18,7 +29,18 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
+function findLongestWord(str){
+    let arrString = str.split(' ')
+    let arrLength = []
+    for (let i = 0; i < arrString.length; i++ ){
+        arrLength.push(arrString[i].length)
+    }
 
+    let maxLength = Math.max.apply(null, arrLength)
+    return arrString[arrLength.indexOf(maxLength)]
+}
+
+console.log(findLongestWord('a book full of dogs'))
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
@@ -29,6 +51,21 @@
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
+function nicer(str){
+    let arrString = str.split(' ')
+    let badWords = ['heck', 'darn', 'dang', 'crappy']
+    for (let i = 0; i < arrString.length; i++){
+        let idx = badWords.indexOf(arrString[i])
+        if (idx ===  -1){
+            arrString[i] = null
+        } 
+    }
+    let filtered = arrString.filter(function(elem){
+       return elem !== null 
+    });
+
+    return filtered.join(' ')
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,6 +76,17 @@
 // Examples:
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
+
+function capitalizeAll(str){
+    let arrString = str.split(' ')
+    let arrNewString = []
+    for(let i = 0; i < arrString.length; i++){
+        arrNewString.push(arrString[i].charAt(0).toUpperCase() + arrString[i].slice(1))
+    }
+    return arrNewString.join(' ')
+}
+console.log(capitalizeAll('hello world')) // --> 'Hello World'
+console.log(capitalizeAll('every day is like sunday')) //--> 'Every Day Is Like Sunday'
 
 
 
@@ -52,3 +100,22 @@
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split(str, sep){
+    let arr = []
+    let lastIndex = 0
+    for(let idx = 0; idx < str.length; idx++){
+        console.log('IndexRange: ' + lastIndex + ','+ idx)
+        if(str[idx] === sep){
+            arr.push(str.substring(lastIndex, idx))
+            lastIndex = idx + 1
+            console.log(arr)
+        }
+    }
+    arr.push()
+    return arr
+}
+
+console.log(split('a-b-c', '-'))// --> ['a', 'b', 'c']
+console.log(split('APPLExxBANANAxxCHERRY', 'xx'))// --> ['APPLE', 'BANANA', 'CHERRY']
+console.log(split('xyz', 'r'))// --> ['xyz']

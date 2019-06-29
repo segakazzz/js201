@@ -8,6 +8,24 @@
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
 
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+function alphaSort(array){
+    let newArray = []
+    while (array.length > 0){
+        let target = array[0];
+        for(let i=0 ; i< array.length ; i++){
+            if(alphabet.indexOf(target[0]) > alphabet.indexOf(array[i][0]))
+                target = array[i]      
+        }
+        newArray.push(target)
+        array.splice(array.indexOf(target), 1)
+        console.log(array)
+    }
+    return newArray
+}
+
+console.log(alphaSort(['wxy', 'wxyz', 'bac', 'cab', 'abc']))
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,8 +36,21 @@
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
 
-
-
+function strLengthSort(array){
+    let newArray = []
+    while (array.length > 0){
+        let target = array[0];
+        for(let i=0 ; i< array.length ; i++){
+            if(target.length > array[i].length)
+                target = array[i]      
+        }
+        newArray.push(target)
+        array.splice(array.indexOf(target), 1)
+        console.log(array)
+    }
+    return newArray    
+}
+console.log(strLengthSort(['one', 'two', 'three', 'four', 'no', 'more']))
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumSort". Given an array of array of numbers like:
 // var arr = [
@@ -38,3 +69,33 @@
 //   [4, 5]
 // ])
 // > [[2], [4, 5], [9, 1, 9]]
+
+
+function sumSort(array){
+    let newArray = []
+    while (array.length > 0){
+        let target = array[0];
+        for(let i=0 ; i< array.length ; i++){
+            if(sumArray(target) > sumArray(array[i]))
+                target = array[i]      
+        }
+        newArray.push(target)
+        array.splice(array.indexOf(target), 1)
+        console.log(array)
+    }
+    return newArray    
+}
+
+function sumArray(array){
+    let sum = 0
+    for(let i=0; i< array.length; i++){
+        sum += array[i]
+    }
+    return sum
+}
+
+console.log(sumSort([
+       [9, 1, 9],
+       [2],
+       [4, 5]
+ ]))

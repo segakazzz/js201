@@ -2,6 +2,9 @@
 // number in the array.
 
 function max(numberArray){
+    if(numberArray.length === 0){
+        return 0
+    }
     let maxIndex = 0
     for(let i=0; i < numberArray.length; i++){
         if(numberArray[maxIndex] < numberArray[i]){
@@ -74,12 +77,14 @@ function evens(numberArray){
 function odds(numberArray){
     let array = []
     for(let i=0; i<numberArray.length; i++){
-        if (numberArray[i] % 2 === 1){
+        if (numberArray[i] % 2 !== 0){
             array.push(numberArray[i])
         }
     }
     return array
 }
+
+console.log(odds([-2,-4,-6,-7,-8]))
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "integers" which takes an array of numbers and returns a new

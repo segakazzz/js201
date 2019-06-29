@@ -56,7 +56,7 @@ function nicer(str){
     let badWords = ['heck', 'darn', 'dang', 'crappy']
     for (let i = 0; i < arrString.length; i++){
         let idx = badWords.indexOf(arrString[i])
-        if (idx ===  -1){
+        if (idx !==  -1){
             arrString[i] = null
         } 
     }

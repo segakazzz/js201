@@ -22,9 +22,9 @@
 // In this example we assume there is a function "hello" already defined and
 // that it prints "Hello, world!" to the console.
 function callNTimes(number, callback){
-    //for(let i=0; i< number; i++){
+    for(let i=0; i< number; i++){
         callback()
-    //}
+    }
 }
 
 function hello(){
@@ -32,4 +32,4 @@ function hello(){
 }
 
 //console.log(hello())
-callNTimes(5, hello())
+callNTimes(5, hello)
